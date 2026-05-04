@@ -12,9 +12,9 @@ End-to-end unsupervised learning project segmenting 5,861 UK retail customers us
 
 ## Headline Findings
 
-- **The top 21% of customers (Champions) generate 74.5% of total revenue** — a textbook Pareto distribution.
+- **The top 21% of customers (Champions) generate 74.5% of total revenue** — a Pareto distribution.
 - **33% of the customer base (Lost) contributes only 3.6% of revenue** — predominantly one-time buyers from over a year ago.
-- Four cleanly separated segments emerged: **Champions**, **At Risk**, **New / Promising**, and **Lost**.
+- Four cleanly separated segments: **Champions**, **At Risk**, **New / Promising**, and **Lost**.
 - PCA confirms the segments are well-separated in feature space (95.3% variance explained by 2 components).
 
 | Segment | Customers | % of Base | % of Revenue | Avg Recency (days) | Avg Frequency | Avg Monetary (£) |
@@ -93,4 +93,4 @@ The dashboard supports cross-filtering — clicking any segment bar filters the 
 
 ## Author
 
-**Mark Mairs** — [GitHub](https://github.com/handillon1)
+**Dillon Han** — [GitHub](https://github.com/handillon1)
