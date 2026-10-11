@@ -50,20 +50,23 @@ End-to-end unsupervised learning project segmenting 5,861 UK retail customers us
 
 ## Project Structure
 
-\`\`\`
+```
 customer-segmentation/
 ├── README.md
+├── LICENSE
+├── requirements.txt
 ├── .gitignore
 ├── sql/
 │   ├── 01_create_schema.sql       # raw + analytics schemas, raw.transactions table
 │   ├── 02_load_data.sql           # COPY both yearly CSVs into raw.transactions
+│   ├── 03_eda.sql                 # exploratory SQL checks (date range, nulls, cancellations)
 │   ├── 04_clean_transactions.sql  # analytics.clean_transactions view
 │   └── 05_customer_rfm.sql        # analytics.customer_rfm table
 ├── notebooks/
 │   └── 01_eda.ipynb               # EDA, scaling, K-Means, segment labeling
 ├── data/                          # (gitignored) raw + processed CSVs
 └── .env                           # (gitignored) PG_PASSWORD
-\`\`\`
+```
 
 ## How to Reproduce
 
@@ -74,12 +77,12 @@ customer-segmentation/
 
 ### Steps
 
-1. **Download the dataset** from UCI and save both yearly CSVs as `retail_2009_2010.csv` and `retail_2010_2011.csv` in `C:\temp\`.
+1. **Download the dataset** from UCI and save both yearly CSVs as `retail_2009_2010.csv` and `retail_2010_2011.csv` in `C:\temp\` (or change the file paths in `sql/02_load_data.sql` to wherever you saved them).
 2. **Create a Python environment**:
-   \`\`\`
+   ```
    conda create -n cluster python=3.11 pandas numpy scikit-learn matplotlib seaborn sqlalchemy psycopg2 python-dotenv jupyter -y
    conda activate cluster
-   \`\`\`
+   ```
 3. **Set up the database** by running each SQL script in order in pgAdmin.
 4. **Create a `.env` file** in the project root with `PG_PASSWORD=your_postgres_password`.
 5. **Run the notebook**: `jupyter notebook notebooks/01_eda.ipynb`.
